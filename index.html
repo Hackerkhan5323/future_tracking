@@ -1,1 +1,45 @@
-// Placeholder for each file - content loaded via canvas in production
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <title>Next-Gen Mobile Tracker</title>
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/augmented.css" />
+  <link rel="stylesheet" href="css/themes/dark.css" media="(prefers-color-scheme: dark)" />
+  <link rel="stylesheet" href="css/themes/light.css" media="(prefers-color-scheme: light)" />
+
+  <!-- Web App Manifest & Icons -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/assets/icons/icon-512.png" />
+
+  <!-- Scripts -->
+  <script defer type="module" src="js/core/app.js"></script>
+  <script defer src="js/libs/wasm-loader.js"></script>
+  <script defer src="js/libs/webgl.js"></script>
+</head>
+<body>
+  <div id="ar-overlay"></div>
+
+  <main>
+    <section id="map-container" class="globe-3d-view"></section>
+    <aside id="insights" class="data-dashboard">
+      <h2>Live Analytics</h2>
+      <div id="ai-prediction"></div>
+      <div id="blockchain-log"></div>
+    </aside>
+  </main>
+
+  <!-- Web Workers -->
+  <script>
+    if (window.Worker) {
+      new Worker('workers/crypto.js');
+      new Worker('workers/analytics.js');
+    }
+  </script>
+</body>
+</html>
