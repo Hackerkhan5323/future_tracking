@@ -68,7 +68,14 @@
     <button onclick="showModel('car')">View 3D Car</button>
     <button onclick="showModel('pin')">View AR Pin (iOS)</button>
   </nav>
-
+<section class="number-tracker">
+  <h2>Track Mobile Number Location</h2>
+  <form id="numberForm">
+    <input type="text" id="phoneNumber" placeholder="Enter Mobile Number" required />
+    <button type="submit">Track Location</button>
+  </form>
+  <div id="locationResult"></div>
+</section>
   <section class="section" id="modelViewerSection">
     <h2 id="modelTitle">Select a Model Above</h2>
     <!-- Viewer will be injected here -->
