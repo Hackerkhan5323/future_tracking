@@ -33,6 +33,24 @@ const App = {
     // WebGL update logic or AR pin injection
     console.log(`[Map] Updating location to (${coords.lat}, ${coords.lng})`);
   }
+  document.getElementById("numberForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const number = document.getElementById("phoneNumber").value.trim();
+  const resultDiv = document.getElementById("locationResult");
+
+  if (!number.match(/^[6-9]\d{9}$/)) {
+    resultDiv.textContent = "❌ Invalid Indian mobile number.";
+    return;
+  }
+
+  // Simulate API result for demo
+  resultDiv.textContent = "🔍 Fetching location...";
+
+  setTimeout(() => {
+    resultDiv.innerHTML = `📍 <strong>Location:</strong> Mumbai, Maharashtra<br>🌐 IP: 103.21.244.1<br>📱 Provider: Jio`;
+  }, 1500);
+}
+
 };
 
 window.addEventListener('DOMContentLoaded', () => App.init());
