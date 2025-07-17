@@ -1,0 +1,1 @@
+This folder contains AI models used for smart tracking and predictions.

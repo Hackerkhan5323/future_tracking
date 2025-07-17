@@ -1,0 +1,1 @@
+This folder contains 3D/AR models used in the location tracker system.
