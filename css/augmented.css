@@ -1,1 +1,32 @@
-// Placeholder for each file - content loaded via canvas in production
+// js/core/argument.js
+
+export const Arguments = {
+  getAll() {
+    const params = new URLSearchParams(window.location.search);
+    const args = {};
+    for (const [key, value] of params.entries()) {
+      args[key] = decodeURIComponent(value);
+    }
+    return args;
+  },
+
+  get(key, fallback = null) {
+    const params = new URLSearchParams(window.location.search);
+    return params.has(key) ? decodeURIComponent(params.get(key)) : fallback;
+  },
+
+  has(key) {
+    return new URLSearchParams(window.location.search).has(key);
+  },
+
+  parseHash() {
+    const hash = window.location.hash.slice(1);
+    const parts = hash.split("&");
+    const args = {};
+    for (const part of parts) {
+      const [k, v] = part.split("=");
+      if (k) args[k] = decodeURIComponent(v || "");
+    }
+    return args;
+  }
+};
