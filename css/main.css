@@ -46,6 +46,33 @@ main {
   margin-bottom: 0.75rem;
   color: #00ffc3;
 }
+.number-tracker {
+  text-align: center;
+  padding: 30px;
+}
+
+.number-tracker input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.number-tracker button {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#locationResult {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #222;
+}
 
 .data-dashboard > div {
   margin-bottom: 1rem;
